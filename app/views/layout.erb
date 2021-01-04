@@ -13,10 +13,10 @@
 
     <body>
       <div class="navbar-fixed">
-        <nav class="red">
+        <nav class="red darken-3">
           <div class="container">
             <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Wine Library</a>
+              <a href="/" class="brand-logo">Wine Library</a>
               <a href="#" data-target="mobile-nav" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
               </a>
@@ -37,7 +37,7 @@
                   <a href="#">Wines</a>
                 </li>
                 <li>
-                  <a href="#">Create Wine</a>
+                  <a href="/wines/new">Add Wine</a>
                 </li>
               </ul>
             </div>
@@ -64,6 +64,10 @@
           <a href="#">Create Wine</a>
         </li>
       </ul>
+
+      <div class="container">
+        <%= yield %>
+      </div>
 
       <section class="slider">
         <ul class="slides">
