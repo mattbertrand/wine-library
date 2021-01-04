@@ -1,1 +1,46 @@
-<h3>Add Wine</h3>
+<h3 class="red-text darken-3">Add Wine</h3>
+
+<form action="/wines" method="post">
+    <div class="input-field">
+        <input id="brand" name="wine[brand]"type="text" class="validate">
+        <label for="brand">Brand</label>
+    </div>
+    <div class="input-field">
+        <input id="winery" name="wine[winery]"type="text" class="validate">
+        <label for="winery">Winery</label>
+    </div>
+    <div class="input-field">
+        <input id="brand" name="wine[brand]"type="text" class="validate">
+        <label for="brand">Brand</label>
+    </div>
+    <div class="input-field">
+        <input id="state" name="wine[state]"type="text" class="validate">
+        <label for="state">State</label>
+    </div>
+    <div class="input-field">
+        <input id="county" name="wine[county]"type="text" class="validate">
+        <label for="county">County</label>
+    </div>
+        <div class="input-field">
+        <input id="varietal" name="wine[varietal]"type="text" class="validate">
+        <label for="varietal">Varietal</label>
+    </div>
+    <div class="input-field">
+    <select>
+      <option value="" disabled selected>Vintage</option>
+      <option value="1">2020</option>
+      <option value="2">2019</option>
+      <option value="3">2018</option>
+    </select>
+  </div>
+    <div class="input-field">
+        <input id="price" name="wine[price]"type="text" class="validate">
+        <label for="price">Price</label>
+    </div>
+</form>
+
+<script>
+   $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>

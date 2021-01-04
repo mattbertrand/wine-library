@@ -113,3 +113,7 @@
     line-height: 24px;
   }
 }
+
+.ui-datepicker-calendar {
+  display: none;
+}
