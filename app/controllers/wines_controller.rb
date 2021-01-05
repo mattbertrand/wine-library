@@ -2,6 +2,7 @@ class WinesController < ApplicationController
     
     get '/wines' do
         @wines = Wine.all
+        @wine = Wine.find_by_id(session[:id])
         erb :'wines/index'
     end
 
@@ -11,6 +12,7 @@ class WinesController < ApplicationController
     
     get '/wines/:id' do
         find_wine
+        session[:wine_id] = @wine.id if wine
         redirect_if_wine_not_found
         erb :'wines/show'
     end
@@ -22,7 +24,6 @@ class WinesController < ApplicationController
     end
 
     post '/wines' do
-        binding.pry
         wine = Wine.new(params[:wine])
 
         if wine.save
