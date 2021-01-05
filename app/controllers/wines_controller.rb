@@ -29,6 +29,15 @@ class WinesController < ApplicationController
         end
     end
 
+    patch '/wines/:id' do
+        find_wine
+        if @wine.update(params[:wine])
+            redirect "/wines/#{@wine.id}"
+        else
+            redirect "/wines/#{@wine.id}/edit"
+        end
+    end
+
     private
 
     def find_wine
