@@ -6,4 +6,9 @@
 <p>Vintage: <%= @wine.vintage %></p>
 <p>Price: $<%= @wine.price %></p>
 
-<a href="/wines/<%= @wine.id %>/edit" class="btn btn-primary red darken-3">Edit</a>
+
+<form action="/wines/<%= @wine.id %>" method="post">
+    <a href="/wines/<%= @wine.id %>/edit" class="btn btn-primary red darken-3" style="margin-right: 25px">Edit</a>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete" class="btn btn-primary red darken-3">
+</form><br>
