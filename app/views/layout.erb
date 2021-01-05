@@ -24,14 +24,13 @@
               </a>
               <ul class="right hide-on-med-and-down">
               <% if !is_logged_in? %>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="#">Login</a></li>
+                  <li><a href="/login">Login</a></li>
                   <li><a href="/signup">Signup</a></li>
-                <% else %>
+              <% else %>
                   <li><a href="/logout">Logout</a></li>
                   <li><a href="/wines">Wines</a></li>
                   <li><a href="/wines/new">Add Wine</a></li>
-                <% end %>
+              <% end %>
               </ul>
             </div>
           </div>
@@ -39,8 +38,7 @@
       </div>
       <ul class="sidenav" id="mobile-nav">
       <% if !is_logged_in? %>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="/login">Login</a></li>
         <li><a href="/signup">Signup</a></li>
       <% else %>
         <li><a href="/logout">Logout</a></li>
