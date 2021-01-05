@@ -7,4 +7,5 @@ end
 use Rack::MethodOverride
 
 use WinesController
+use SessionController
 run ApplicationController
