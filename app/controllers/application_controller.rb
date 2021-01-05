@@ -17,6 +17,10 @@ class ApplicationController < Sinatra::Base
     def is_logged_in?
       !!session[:user_id]
     end
+
+    def redirect_if_logged_in
+      redirect '/wines' if is_logged_in?
+    end
   end
 
 end
