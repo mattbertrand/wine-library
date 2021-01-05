@@ -11,15 +11,18 @@ class WinesController < ApplicationController
     
     get '/wines/:id' do
         find_wine
+        redirect_if_wine_not_found
         erb :'wines/show'
     end
 
     get '/wines/:id/edit' do
         find_wine
+        redirect_if_wine_not_found
         erb :'wines/edit'
     end
 
     post '/wines' do
+        binding.pry
         wine = Wine.new(params[:wine])
 
         if wine.save
@@ -31,6 +34,7 @@ class WinesController < ApplicationController
 
     patch '/wines/:id' do
         find_wine
+        redirect_if_wine_not_found
         if @wine.update(params[:wine])
             redirect "/wines/#{@wine.id}"
         else
@@ -38,9 +42,19 @@ class WinesController < ApplicationController
         end
     end
 
+    delete '/wines/:id' do
+        find_wine
+        @wine.destroy if @wine
+        redirect '/wines'
+    end
+
     private
 
     def find_wine
         @wine = Wine.find_by_id(params[:id])
+    end
+
+    def redirect_if_wine_not_found
+        redirect "/wines" unless @wine
     end
 end

@@ -10,9 +10,14 @@
         <input id="winery" name="wine[winery]" type="text" class="validate" value="<%= @wine.winery %>">
         <label for="winery">Winery</label>
     </div>
-    <div class="input-field">
-        <input id="state" name="wine[state]" type="text" class="validate" value="<%= @wine.state %>">
-        <label for="state">State</label>
+    <div class="input-field col s12">
+        <select name="wine[state]">
+        <option value="" disabled selected>Choose State</option>
+        <option value="California">California</option>
+        <option value="Oregon">Oregon</option>
+        <option value="Colorado">Colorado</option>
+        </select>
+        <label>State</label>
     </div>
     <div class="input-field">
         <input id="county" name="wine[county]" type="text" class="validate" value="<%= @wine.county %>">
@@ -22,9 +27,9 @@
         <input id="varietal" name="wine[varietal]" type="text" class="validate" value="<%= @wine.varietal %>">
         <label for="varietal">Varietal</label>
     </div>
-    <div class="input-field">
-        <input id="vintage" name="wine[vintage]" type="text" class="validate" value="<%= @wine.vintage %>">
-        <label for="vintage">Vintage</label>
+    <div class="input-field col s12">
+        <select name="wine[vintage]" id="year"></select>
+        <label>Vintage</label>
     </div>
     <div class="input-field">
         <input id="price" name="wine[price]" type="text" class="validate" value="<%= @wine.price %>">
@@ -38,4 +43,12 @@
    $(document).ready(function(){
     $('select').formSelect();
   });
+
+  var year = 1950;
+    var till = 2021;
+    var options = "";
+    for(var y=year; y<=till; y++){
+    options += "<option>"+ y +"</option>";
+    }
+    document.getElementById("year").innerHTML = options;
 </script>
