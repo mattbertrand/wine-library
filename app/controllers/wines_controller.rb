@@ -9,8 +9,12 @@ class WinesController < ApplicationController
         erb :'wines/new'
     end
 
+    get '/wines/:id' do
+        @wine = Wine.find_by_id(params[:id])
+        erb :'wines/show'
+      end
+
     post '/wines' do
-        binding.pry
         wine = Wine.new(params[:wine])
 
         if wine.save
