@@ -1,0 +1,7 @@
+<h3>Wine List</h3>
+
+<ul>
+    <% @wines.each do |wine| %>
+        <li><a href="/wines/<%= wine.id %>"><%= wine.brand %></a></li>
+    <% end %>
+</ul>

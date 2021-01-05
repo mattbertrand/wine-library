@@ -6,7 +6,7 @@ class CreateWines < ActiveRecord::Migration
       t.string :state
       t.string :county
       t.string :varietal
-      t.date :vintage
+      t.integer :vintage
       t.integer :price
 
       t.timestamps null: false

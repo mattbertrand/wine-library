@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20210104193235) do
     t.string   "state"
     t.string   "county"
     t.string   "varietal"
-    t.date     "vintage"
+    t.integer  "vintage"
     t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
