@@ -8,11 +8,16 @@ class WinesController < ApplicationController
     get '/wines/new' do
         erb :'wines/new'
     end
-
+    
     get '/wines/:id' do
-        @wine = Wine.find_by_id(params[:id])
+        find_wine
         erb :'wines/show'
-      end
+    end
+
+    get '/wines/:id/edit' do
+        find_wine
+        erb :'wines/edit'
+    end
 
     post '/wines' do
         wine = Wine.new(params[:wine])
@@ -22,5 +27,11 @@ class WinesController < ApplicationController
         else
             redirect '/wines/new'
         end
+    end
+
+    private
+
+    def find_wine
+        @wine = Wine.find_by_id(params[:id])
     end
 end
