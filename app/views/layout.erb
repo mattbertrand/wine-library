@@ -23,48 +23,30 @@
                 <i class="material-icons">menu</i>
               </a>
               <ul class="right hide-on-med-and-down">
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  <a href="#">Login</a>
-                </li>
-                <li>
-                  <a href="/signup">Signup</a>
-                </li>
-                <li>
-                  <a href="#">Signout</a>
-                </li>
-                <li>
-                  <a href="/wines">Wines</a>
-                </li>
-                <li>
-                  <a href="/wines/new">Add Wine</a>
-                </li>
+              <% if !is_logged_in? %>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="/signup">Signup</a></li>
+                <% else %>
+                  <li><a href="/logout">Logout</a></li>
+                  <li><a href="/wines">Wines</a></li>
+                  <li><a href="/wines/new">Add Wine</a></li>
+                <% end %>
               </ul>
             </div>
           </div>
         </nav>
       </div>
       <ul class="sidenav" id="mobile-nav">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="#">Login</a>
-        </li>
-        <li>
-          <a href="/signup">Signup</a>
-        </li>
-        <li>
-          <a href="#">Signout</a>
-        </li>
-        <li>
-          <a href="/wines">Wines</a>
-        </li>
-        <li>
-          <a href="/wines/new">Create Wine</a>
-        </li>
+      <% if !is_logged_in? %>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
+      <% else %>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/wines">Wines</a></li>
+        <li><a href="/wines/new">Create Wine</a></li>
+      <% end %>
       </ul>
 
 

@@ -12,6 +12,10 @@ class SessionController < ApplicationController
         else
             redirect '/signup'
         end
-        binding.pry
+    end
+
+    get '/logout' do
+        session.clear
+        redirect '/signup'
     end
 end
