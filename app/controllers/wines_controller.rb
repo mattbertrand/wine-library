@@ -1,5 +1,9 @@
 class WinesController < ApplicationController
     get '/wines/new' do
         erb :'wines/new'
-      end
+    end
+
+    post '/wines' do
+        wine = Wine.new(params[:wine])
+    end
 end
