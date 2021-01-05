@@ -1,6 +1,6 @@
 <h3>Wine List</h3>
 
-<p>Recently viewed <%= @wine ? @wine.brand : "Haven't viewed any wines"%></p>
+<p>Recently viewed: <%= @wine ? @wine.brand : "Haven't viewed any wines"%></p>
 
 <ul>
     <% @wines.each do |wine| %>
