@@ -9,8 +9,14 @@ class ApplicationController < Sinatra::Base
     set :session_secret, ENV['SESSION_SECRET']
   end
 
+  helpers :is_logged_in?
+
   get "/" do
     erb :welcome
+  end
+
+  def is_logged_in?
+    !!session[:user_id]
   end
 
 end
