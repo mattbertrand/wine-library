@@ -3,35 +3,35 @@
 <form action="/wines/<%= @wine.id %>" method="post">
     <input type="hidden" class="_method" value="patch">
     <div class="input-field">
-        <input id="brand" name="wine[brand]" type="text" class="validate">
+        <input id="brand" name="wine[brand]" type="text" class="validate" value="<%= @wine.brand %>">
         <label for="brand">Brand</label>
     </div>
     <div class="input-field">
-        <input id="winery" name="wine[winery]" type="text" class="validate">
+        <input id="winery" name="wine[winery]" type="text" class="validate" value="<%= @wine.winery %>">
         <label for="winery">Winery</label>
     </div>
     <div class="input-field">
-        <input id="state" name="wine[state]" type="text" class="validate">
+        <input id="state" name="wine[state]" type="text" class="validate" value="<%= @wine.state %>">
         <label for="state">State</label>
     </div>
     <div class="input-field">
-        <input id="county" name="wine[county]" type="text" class="validate">
+        <input id="county" name="wine[county]" type="text" class="validate" value="<%= @wine.county %>">
         <label for="county">County</label>
     </div>
     <div class="input-field">
-        <input id="varietal" name="wine[varietal]" type="text" class="validate">
+        <input id="varietal" name="wine[varietal]" type="text" class="validate" value="<%= @wine.varietal %>">
         <label for="varietal">Varietal</label>
     </div>
     <div class="input-field">
-        <input id="vintage" name="wine[vintage]" type="text" class="validate">
+        <input id="vintage" name="wine[vintage]" type="text" class="validate" value="<%= @wine.vintage %>">
         <label for="vintage">Vintage</label>
     </div>
     <div class="input-field">
-        <input id="price" name="wine[price]" type="text" class="validate">
+        <input id="price" name="wine[price]" type="text" class="validate" value="<%= @wine.price %>">
         <label for="price">Price</label>
     </div>
 
-    <input type="submit" value="Add Wine" class="btn red darken-3" style="margin-left: 50%">
+    <input type="submit" value="Update Wine" class="btn red darken-3" style="margin-left: 50%">
 </form><br>
 
 <script>
