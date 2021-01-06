@@ -28,7 +28,7 @@ class WinesController < ApplicationController
     end
 
     post '/wines' do
-        wine = Wine.new(params[:wine])
+        wine = current_user.wines.build(params[:wine])
 
         if wine.save
             redirect '/wines'
