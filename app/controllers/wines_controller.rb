@@ -1,16 +1,19 @@
 class WinesController < ApplicationController
     
     get '/wines' do
+        redirect_if_not_logged_in
         @wines = Wine.all
         @wine = Wine.find_by_id(session[:wine_id])
         erb :'wines/index'
     end
 
     get '/wines/new' do
+        redirect_if_not_logged_in
         erb :'wines/new'
     end
     
     get '/wines/:id' do
+        redirect_if_not_logged_in
         find_wine
         session[:wine_id] = @wine.id if @wine
         redirect_if_wine_not_found
@@ -18,6 +21,7 @@ class WinesController < ApplicationController
     end
 
     get '/wines/:id/edit' do
+        redirect_if_not_logged_in
         find_wine
         redirect_if_wine_not_found
         erb :'wines/edit'
