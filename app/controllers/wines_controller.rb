@@ -35,6 +35,7 @@ class WinesController < ApplicationController
         if wine.save
             redirect '/wines'
         else
+            flash[:errors] = wine.errors.full_messages
             redirect '/wines/new'
         end
     end
