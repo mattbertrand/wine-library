@@ -25,6 +25,7 @@ class WinesController < ApplicationController
         redirect_if_not_logged_in
         find_wine
         redirect_if_wine_not_found
+        redirect_if_not_owner
         erb :'wines/edit'
     end
 
@@ -50,7 +51,9 @@ class WinesController < ApplicationController
 
     delete '/wines/:id' do
         find_wine
-        @wine.destroy if @wine
+        redirect_if_wine_not_found
+        redirect_if_not_owner
+        @wine.destroy
         redirect '/wines'
     end
 
@@ -65,6 +68,6 @@ class WinesController < ApplicationController
     end
 
     def redirect_if_not_owner
-        redirect '/wines' unless @wine.owner == current_user
+        redirect '/wines' unless @wine.user == current_user
     end
 end
