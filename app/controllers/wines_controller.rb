@@ -17,7 +17,6 @@ class WinesController < ApplicationController
         redirect_if_not_logged_in
         find_wine
         redirect_if_wine_not_found
-        # redirect_if_not_owner
         session[:wine_id] = @wine.id if @wine
         erb :'wines/show'
     end

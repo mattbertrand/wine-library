@@ -2,7 +2,6 @@
 
 <p>Recently viewed: <%= @wine ? @wine.brand : "Haven't viewed any wines"%></p>
 
-
 <div class="card cyan lighten-1">
         <div class="card-content white-text">
           <span class="card-title">Your library</span>
@@ -19,6 +18,16 @@
             <ul>
                 <% @wines.each do |wine| %>
                     <li><a href="/wines/<%= wine.id %>"><%= wine.brand %></a></li>
+                <% end %>
+            </ul>
+        </div>
+</div>
+<div class="card cyan lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Wine by varietal</span>
+            <ul>
+                <% @wines.each do |wine| %>
+                    <li><a href="/wines/<%= wine.id %>"><%= wine.varietal %></a></li>
                 <% end %>
             </ul>
         </div>
