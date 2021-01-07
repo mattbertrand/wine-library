@@ -16,6 +16,7 @@ class SessionController < ApplicationController
 
     get '/login' do
         redirect_if_logged_in
+        # redirect_if_wrong_combination
         erb :'sessions/login'
     end
 

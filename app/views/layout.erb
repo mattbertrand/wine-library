@@ -27,6 +27,7 @@
                   <li><a href="/login">Login</a></li>
                   <li><a href="/signup">Signup</a></li>
               <% else %>
+                  <li>Welcome, <%= current_user.username %></li>
                   <li><a href="/logout">Logout</a></li>
                   <li><a href="/wines">Wines</a></li>
                   <li><a href="/wines/new">Add Wine</a></li>
@@ -61,14 +62,14 @@
         <img src="https://cdn.vox-cdn.com/thumbor/25IbqLQvtqdxz_UP-PHKqw-u6wo=/0x0:2400x1600/1820x1213/filters:focal(1008x608:1392x992):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63977740/GettyImages_160836693.0.jpg"> <!-- random image -->
         <div class="caption right-align">
           <h1>Wines For All Budgets</h1>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Discover our selection of over 1000 wines worldwide</h5>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Discover our selection of over 1000 wines from the West Coast</h5>
         </div>
       </li>
       <li>
         <img src="https://static.toiimg.com/thumb/msid-64745651,imgsize-33475,width-800,height-600,resizemode-75/64745651.jpg">
         <div class="caption right-align">
           <h1>Best Wines 2020</h1>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Enjoy the best wines of 2020</h5>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">Discover the best wines of 2020</h5>
         </div>
       </li>
     </ul>
@@ -80,12 +81,12 @@
             <p><%= error %></p>
           <% end %>
         <% end %>
-      </div>
       
       <div class="container">
         <%= yield %>
       </div>
 
+      </div>
       <footer class="section #b71c1c red darken-4 white-text center">
         <p class="flow-text">Wine Library &copy; 2021 </p>
       </footer>
