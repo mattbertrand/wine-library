@@ -2,6 +2,7 @@ class WinesController < ApplicationController
     
     get '/wines' do
         redirect_if_not_logged_in
+        @wines_recently_added = Wine.all.reverse.first(10)
         @wines = Wine.all
         @user_wines = current_user.wines
         @wine = Wine.find_by_id(session[:wine_id])

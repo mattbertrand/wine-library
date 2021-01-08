@@ -129,7 +129,7 @@ DEPENDENCIES
   pg (~> 0.15)
   pry
   rack-test
-  rake (>= 0.9.2)
+  rake
   require_all
   rspec
   shotgun
