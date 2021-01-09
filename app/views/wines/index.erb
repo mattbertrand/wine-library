@@ -7,7 +7,7 @@
           <span class="card-title">Your library</span>
             <ul>
                 <% @user_wines.each do |wine| %>
-                    <li><a href="/wines/<%= wine.id %>"><%= wine.brand %></a></li>
+                    <li><a href="/wines/<%= wine.id %>"><%= wine.brand%> - <%= wine.varietal%></a></li>
                 <% end %>
             </ul>
         </div>
@@ -17,7 +17,7 @@
           <span class="card-title">All wines</span>
             <ul>
                 <% @wines.each do |wine| %>
-                    <li><a href="/wines/<%= wine.id %>"><%= wine.brand %></a></li>
+                    <li><a href="/wines/<%= wine.id %>"><%= wine.brand %>  - <%= wine.varietal%></a></li>
                 <% end %>
             </ul>
         </div>
@@ -27,7 +27,7 @@
           <span class="card-title">Recently added</span>
             <ul>
                 <% @wines_recently_added.each do |wine| %>
-                    <li><a href="/wines/<%= wine.id %>"><%= wine.brand %></a></li>
+                    <li><a href="/wines/<%= wine.id %>"><%= wine.brand %>  - <%= wine.varietal%></a></li>
                 <% end %>
             </ul>
         </div>
