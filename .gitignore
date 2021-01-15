@@ -1,1 +1,3 @@
 .env
+app/views/layout.erb
+app/views/wines/new.erb
